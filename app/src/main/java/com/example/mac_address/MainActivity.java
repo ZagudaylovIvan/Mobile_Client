@@ -10,15 +10,16 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String host = "192.168.1.21";
+    private String host = "192.168.42.210";
     private String mac;
     private String port = "5000";
     private WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        WebView webView = (WebView) findViewById(R.id.webview);
+        WebView webView = findViewById(R.id.webview);
         try {
             List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
 
