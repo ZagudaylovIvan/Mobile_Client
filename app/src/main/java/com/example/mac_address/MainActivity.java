@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String host = "192.168.42.210";
+    private String host = "192.168.1.21";
     private String mac;
     private String port = "5000";
     private WebView webView;
