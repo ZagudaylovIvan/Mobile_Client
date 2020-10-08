@@ -13,10 +13,10 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String host = "192.168.1.21";
+    private String host = "192.168.43.129";
     private String mac;
     private String port = "5000";
-    private WebView webView;
+    private WebView webview;
     TimerTask doAsynchronousTask;
     final Handler handler = new Handler();
     Timer timer = new Timer();
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             mac = stringMac.substring(0,stringMac.length()-1);
+            webView.loadUrl("http://"+ host +":"+ port +"/mac_address/"+ mac);
 
             doAsynchronousTask = new TimerTask() {
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
                     handler.post(new Runnable() {
                         public void run() {
-                            webView.loadUrl("http://"+ host +":"+ port +"/mac_address/"+ mac);
+                            webView.reload();
                         }
                     });
 
